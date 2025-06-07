@@ -20,3 +20,4 @@ jobs:
           notification_email: "hasretturhan92@gmail.com"  # Coverity hesabındaki e-posta
           build_command: |
             gcc ./src/*.c -Iinclude -o library.exe
+ 
