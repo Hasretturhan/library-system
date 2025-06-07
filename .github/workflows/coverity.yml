@@ -16,7 +16,7 @@ jobs:
       - name: Run Coverity Scan
         uses: coverity/scan-action@master
         with:
-          project: "Hasretturhan/library-system"    # GitHub repo ismi
+          project: "library-system"    # GitHub repo ismi
           notification_email: "hasretturhan92@gmail.com"  # Coverity hesabındaki e-posta
           build_command: |
             gcc ./src/*.c -Iinclude -o library.exe
