@@ -1,0 +1,22 @@
+name: Coverity Scan
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  coverity_scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run Coverity Scan
+        uses: coverity/scan-action@master
+        with:
+          project: "hasretturhan/library-system"
+          notification_email: "hasretturhan92@gmail.com"
+          token: ${{ secrets.COVERITY_TOKEN }}
+          build_command: gcc ./src/*.c -Iinclude -o library.exe
